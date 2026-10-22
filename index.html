@@ -4,51 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> tab - Proyecto 10</title>
+    <title>PROYECTO 10: Pestañas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <main class="contenedor-pestanas">
-        <!-- Controles tipo radio para manejar el estado activo -->
-        <input type="radio" id="pestana-1" name="pestanas" class="control-radio" checked>
-        <input type="radio" id="pestana-2" name="pestanas" class="control-radio">
-        <input type="radio" id="pestana-3" name="pestanas" class="control-radio">
-        <input type="radio" id="pestana-4" name="pestanas" class="control-radio">
-
-        <!-- Etiquetas visuales de los botones -->
-        <div class="lista-pestanas">
-            <label for="pestana-1" class="boton-pestana">Primera Pestaña</label>
-            <label for="pestana-2" class="boton-pestana">Segunda Pestaña</label>
-            <label for="pestana-3" class="boton-pestana">Tercera Pestaña</label>
-            <label for="pestana-4" class="boton-pestana">Cuarta Pestaña</label>
+    <main class="contenedor-principal">
+        <!-- Pestañas de navegación -->
+        <div class="pestanas-header">
+            <button class="tab-btn activo" data-tab="tab-1">Primera Pestaña</button>
+            <button class="tab-btn" data-tab="tab-2">Segunda Pestaña</button>
+            <button class="tab-btn" data-tab="tab-3">Tercera Pestaña</button>
+            <button class="tab-btn" data-tab="tab-4">Cuarta Pestaña</button>
         </div>
 
-        <!-- Contenido correspondiente a cada pestaña -->
-        <div class="contenido-pestanas">
-            <div class="panel-pestana panel-1">
-                <h2>Contenido de la Primera Pestaña</h2>
-                <p>Aquí se muestra el contenido correspondiente a la primera pestaña activada por defecto.</p>
-            </div>
+        <!-- Instrucción superior -->
+        <p class="instruccion">
+            Hacer clic en cada pestaña debe ocultar el contenido de las otras pestañas y mostrar el contenido de la
+            pestaña seleccionada. Por defecto, activa la primera pestaña.
+        </p>
 
-            <div class="panel-pestana panel-2">
-                <h2>Contenido de la Segunda Pestaña</h2>
-                <p>Contenido dinámico de la segunda pestaña visualizado únicamente con CSS.</p>
+        <!-- Caja de contenido en fondo negro -->
+        <div class="caja-negra">
+            <div id="tab-1" class="tab-contenido activo">
+                El contenido de la primera pestaña se muestra aquí.
             </div>
-
-            <div class="panel-pestana panel-3">
-                <h2>Contenido de la Tercera Pestaña</h2>
-                <p>Este es el texto de prueba para la tercera pestaña.</p>
+            <div id="tab-2" class="tab-contenido">
+                El contenido de la segunda pestaña se muestra aquí.
             </div>
-
-            <div class="panel-pestana panel-4">
-                <h2>Contenido de la Cuarta Pestaña</h2>
-                <p>Información final perteneciente a la cuarta pestaña.</p>
+            <div id="tab-3" class="tab-contenido">
+                El contenido de la tercera pestaña se muestra aquí.
+            </div>
+            <div id="tab-4" class="tab-contenido">
+                El contenido de la cuarta pestaña se muestra aquí.
             </div>
         </div>
+
+        <p class="texto-pie">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci animi explicabo rem? Corporis repellendus obcaecati ratione sunt maiores, adipisci neque at error recusandae, iste, alias quibusdam in esse temporibus labore?
+        </p>
     </main>
 
+    <script src="script.js"></script>
 </body>
 
 </html>

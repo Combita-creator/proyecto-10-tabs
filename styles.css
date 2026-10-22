@@ -2,11 +2,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-    background-color: #060c14;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,81 +14,82 @@ body {
     padding: 20px;
 }
 
-/* Ocultar los inputs tipo radio */
-.control-radio {
-    display: none;
-}
-
-/* Contenedor principal */
-.contenedor-pestanas {
-    background-color: #ffffff;
+/* Tarjeta contenedora principal con borde redondeado */
+.contenedor-principal {
+    border: 2px solid #222222;
+    border-radius: 20px;
+    padding: 35px 30px;
+    max-width: 620px;
     width: 100%;
-    max-width: 650px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
 }
 
-/* Barra de botones */
-.lista-pestanas {
+/* Navegación de pestañas */
+.pestanas-header {
     display: flex;
-    background-color: #e2e8f0;
-    border-bottom: 2px solid #cbd5e1;
+    gap: 25px;
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 25px;
+    padding-bottom: 8px;
 }
 
-.boton-pestana {
-    flex: 1;
-    padding: 14px 16px;
-    text-align: center;
-    font-size: 0.95rem;
+.tab-btn {
+    background: none;
+    border: none;
+    font-size: 15px;
     font-weight: 600;
-    color: #64748b;
+    color: #a0a0a0;
     cursor: pointer;
-    transition: all 0.25s ease;
-    user-select: none;
+    padding-bottom: 8px;
+    position: relative;
+    transition: color 0.2s ease;
 }
 
-.boton-pestana:hover {
-    color: #1e293b;
-    background-color: #d1d5db;
+.tab-btn.activo {
+    color: #111111;
 }
 
-/* Contenido de pestañas (oculto por defecto) */
-.contenido-pestanas {
-    padding: 24px;
+/* Subrayado negro bajo la pestaña activa */
+.tab-btn.activo::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #111111;
+    border-radius: 2px;
 }
 
-.panel-pestana {
+/* Texto de la instrucción */
+.instruccion {
+    font-size: 15px;
+    color: #111111;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* Caja negra redondeada para el contenido */
+.caja-negra {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 50px 20px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Visibilidad de los paneles */
+.tab-contenido {
     display: none;
+    font-size: 15px;
 }
 
-.panel-pestana h2 {
-    color: #1e293b;
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-}
-
-.panel-pestana p {
-    color: #475569;
-    line-height: 1.5;
-}
-
-/* selector de hermano adyacente (~) */
-
-/* Botones activos según el radio seleccionado */
-#pestana-1:checked~.lista-pestanas label[for="pestana-1"],
-#pestana-2:checked~.lista-pestanas label[for="pestana-2"],
-#pestana-3:checked~.lista-pestanas label[for="pestana-3"],
-#pestana-4:checked~.lista-pestanas label[for="pestana-4"] {
-    color: #2563eb;
-    background-color: #ffffff;
-    border-bottom: 3px solid #2563eb;
-}
-
-/* Paneles visibles según el radio seleccionado */
-#pestana-1:checked~.contenido-pestanas .panel-1,
-#pestana-2:checked~.contenido-pestanas .panel-2,
-#pestana-3:checked~.contenido-pestanas .panel-3,
-#pestana-4:checked~.contenido-pestanas .panel-4 {
+.tab-contenido.activo {
     display: block;
+}
+
+/* Texto del pie */
+.texto-pie {
+    font-size: 15px;
+    color: #111111;
 }
