@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #060c14;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Ocultar los inputs tipo radio */
+.control-radio {
+    display: none;
+}
+
+/* Contenedor principal */
+.contenedor-pestanas {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 650px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Barra de botones */
+.lista-pestanas {
+    display: flex;
+    background-color: #e2e8f0;
+    border-bottom: 2px solid #cbd5e1;
+}
+
+.boton-pestana {
+    flex: 1;
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    user-select: none;
+}
+
+.boton-pestana:hover {
+    color: #1e293b;
+    background-color: #d1d5db;
+}
+
+/* Contenido de pestañas (oculto por defecto) */
+.contenido-pestanas {
+    padding: 24px;
+}
+
+.panel-pestana {
+    display: none;
+}
+
+.panel-pestana h2 {
+    color: #1e293b;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.panel-pestana p {
+    color: #475569;
+    line-height: 1.5;
+}
+
+/* selector de hermano adyacente (~) */
+
+/* Botones activos según el radio seleccionado */
+#pestana-1:checked~.lista-pestanas label[for="pestana-1"],
+#pestana-2:checked~.lista-pestanas label[for="pestana-2"],
+#pestana-3:checked~.lista-pestanas label[for="pestana-3"],
+#pestana-4:checked~.lista-pestanas label[for="pestana-4"] {
+    color: #2563eb;
+    background-color: #ffffff;
+    border-bottom: 3px solid #2563eb;
+}
+
+/* Paneles visibles según el radio seleccionado */
+#pestana-1:checked~.contenido-pestanas .panel-1,
+#pestana-2:checked~.contenido-pestanas .panel-2,
+#pestana-3:checked~.contenido-pestanas .panel-3,
+#pestana-4:checked~.contenido-pestanas .panel-4 {
+    display: block;
+}

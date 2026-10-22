@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> tab - Proyecto 10</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="contenedor-pestanas">
+        <!-- Controles tipo radio para manejar el estado activo -->
+        <input type="radio" id="pestana-1" name="pestanas" class="control-radio" checked>
+        <input type="radio" id="pestana-2" name="pestanas" class="control-radio">
+        <input type="radio" id="pestana-3" name="pestanas" class="control-radio">
+        <input type="radio" id="pestana-4" name="pestanas" class="control-radio">
+
+        <!-- Etiquetas visuales de los botones -->
+        <div class="lista-pestanas">
+            <label for="pestana-1" class="boton-pestana">Primera Pestaña</label>
+            <label for="pestana-2" class="boton-pestana">Segunda Pestaña</label>
+            <label for="pestana-3" class="boton-pestana">Tercera Pestaña</label>
+            <label for="pestana-4" class="boton-pestana">Cuarta Pestaña</label>
+        </div>
+
+        <!-- Contenido correspondiente a cada pestaña -->
+        <div class="contenido-pestanas">
+            <div class="panel-pestana panel-1">
+                <h2>Contenido de la Primera Pestaña</h2>
+                <p>Aquí se muestra el contenido correspondiente a la primera pestaña activada por defecto.</p>
+            </div>
+
+            <div class="panel-pestana panel-2">
+                <h2>Contenido de la Segunda Pestaña</h2>
+                <p>Contenido dinámico de la segunda pestaña visualizado únicamente con CSS.</p>
+            </div>
+
+            <div class="panel-pestana panel-3">
+                <h2>Contenido de la Tercera Pestaña</h2>
+                <p>Este es el texto de prueba para la tercera pestaña.</p>
+            </div>
+
+            <div class="panel-pestana panel-4">
+                <h2>Contenido de la Cuarta Pestaña</h2>
+                <p>Información final perteneciente a la cuarta pestaña.</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
